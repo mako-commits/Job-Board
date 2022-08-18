@@ -24,11 +24,11 @@ const DUMMY_JOBS = [
     image:
       "https://images.unsplash.com/photo-1496442226666-8d4d0e62e6e9?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80",
     starRating: 2.66,
-    salary: "250k - 300k",
-    location: "San Fransisco",
-    level: "Mid-Level",
-    type: "Full time",
-    company: "MasterCard",
+    salary: "100k - 150k",
+    location: "Portugal",
+    level: "Entry-Level",
+    type: "Part time",
+    company: "IBM",
     description:
       "This sunny and spacious room is for those traveling light and looking for a comfy and cosy place to lay their head for a night or two. This beach house sits in a vibrant neighborhood littered with cafes, pubs, restaurants and supermarkets and is close to all the major attractions such as Edinburgh Castle and Arthur's Seat.",
   },

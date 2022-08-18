@@ -6,7 +6,7 @@ import Image from "next/image";
 import logo from "../../images/workflow-mark.svg";
 const navigation = [
   { name: "Job Board", href: "#", current: true },
-  { name: "Post a Job", href: "#", current: false },
+  { name: "Post a Job", href: "/new-job", current: false },
   { name: "Projects", href: "#", current: false },
   { name: "Calendar", href: "#", current: false },
 ];

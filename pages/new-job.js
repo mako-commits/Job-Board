@@ -1,7 +1,12 @@
 import React from "react";
+import JobForm from "../components/jobs/JobForm";
 
 const NewJobPage = () => {
-  return <div>new-job</div>;
+  return (
+    <section className="main">
+      <JobForm />
+    </section>
+  );
 };
 
 export default NewJobPage;

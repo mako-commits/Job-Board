@@ -28,3 +28,9 @@ a {
     background: black;
   }
 }
+
+.main {
+  margin: 3rem auto;
+  width: 90%;
+  max-width: 50rem;
+}
