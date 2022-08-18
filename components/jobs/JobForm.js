@@ -1,6 +1,6 @@
 import { useRef } from "react";
 
-const JobForm = () => {
+const JobForm = (props) => {
   const companyNameInput = useRef();
   const companyWebsiteInput = useRef();
   const companyEmailInput = useRef();
@@ -9,6 +9,7 @@ const JobForm = () => {
   const jobTypeInput = useRef();
   const jobDescriptionInput = useRef();
   const jobResponsibilitiesInput = useRef();
+
   const submitHandler = (e) => {
     e.preventDefault();
 
@@ -21,7 +22,7 @@ const JobForm = () => {
     const enteredJobDescription = jobDescriptionInput.current.value;
     const enteredJobResponsibilities = jobResponsibilitiesInput.current.value;
 
-    const formData = {
+    const jobData = {
       companyName: enteredCompanyName,
       companyWebsite: enteredCompanyWebsite,
       companyEmail: enteredCompanyEmail,
@@ -31,7 +32,8 @@ const JobForm = () => {
       jobDescription: enteredJobDescription,
       jobResponsibilities: enteredJobResponsibilities,
     };
-    console.log(formData);
+    props.onAddJob(jobData);
+    console.log(jobData);
   };
   return (
     <div className="mt-5 md:mt-0 md:col-span-2">
@@ -113,62 +115,6 @@ const JobForm = () => {
               </div>
 
               <div className="col-span-6 sm:col-span-3">
-                <fieldset>
-                  <legend className="contents text-base font-medium text-gray-900">
-                    Job Type
-                  </legend>
-
-                  <div className="mt-4 flex space-x-4 items-center">
-                    <div className="flex items-center">
-                      <input
-                        ref={jobTypeInput}
-                        id="full-time"
-                        name="job-type"
-                        type="radio"
-                        className="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300"
-                      />
-                      <label
-                        htmlFor="full-time"
-                        className="ml-3 block text-sm font-medium text-gray-700"
-                      >
-                        Full Time
-                      </label>
-                    </div>
-                    <div className="flex items-center">
-                      <input
-                        ref={jobTypeInput}
-                        id="part-time"
-                        name="job-type"
-                        type="radio"
-                        className="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300"
-                      />
-                      <label
-                        htmlFor="part-time"
-                        className="ml-3 block text-sm font-medium text-gray-700"
-                      >
-                        Part Time
-                      </label>
-                    </div>
-                    <div className="flex items-center">
-                      <input
-                        ref={jobTypeInput}
-                        id="internship"
-                        name="job-type"
-                        type="radio"
-                        className="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300"
-                      />
-                      <label
-                        htmlFor="internship"
-                        className="ml-3 block text-sm font-medium text-gray-700"
-                      >
-                        Internship
-                      </label>
-                    </div>
-                  </div>
-                </fieldset>
-              </div>
-
-              <div className="col-span-6 sm:col-span-3">
                 <label
                   htmlFor="street-address"
                   className="block text-sm font-medium text-gray-700"
@@ -184,24 +130,25 @@ const JobForm = () => {
                   className="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
                 />
               </div>
-              {/* <div className="col-span-6 sm:col-span-3">
+              <div className="col-span-6 sm:col-span-3">
                 <label
-                  htmlFor="country"
+                  htmlFor="job-type"
                   className="block text-sm font-medium text-gray-700"
                 >
-                  Location
+                  Job Type
                 </label>
                 <select
-                  id="country"
-                  name="country"
+                  ref={jobTypeInput}
+                  id="job-type"
+                  name="job-type"
                   autoComplete="country-name"
                   className="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
                 >
-                  <option>United States</option>
-                  <option>Canada</option>
-                  <option>Mexico</option>
+                  <option>Full Time</option>
+                  <option>Part Time</option>
+                  <option>Internship</option>
                 </select>
-              </div> */}
+              </div>
 
               <div className="col-span-6 ">
                 <label
