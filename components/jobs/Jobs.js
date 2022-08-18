@@ -8,7 +8,7 @@ const DUMMY_JOBS = [
     id: "m1",
     title: "Frontend Developer",
     image:
-      "https://images.unsplash.com/photo-1496442226666-8d4d0e62e6e9?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80",
+      "https://images.unsplash.com/photo-1562705121-e624542c7b9b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80",
     starRating: 2.66,
     salary: "250k - 300k",
     location: "San Fransisco",
@@ -36,13 +36,13 @@ const DUMMY_JOBS = [
 const Jobs = () => {
   return (
     <div className="divide-y divide-slate-100">
-      <Nav>
+      {/* <Nav>
         <NavItem href="/new" isActive>
           New Releases
         </NavItem>
         <NavItem href="/top">Top Rated</NavItem>
         <NavItem href="/picks">Vincent’s Picks</NavItem>
-      </Nav>
+      </Nav> */}
 
       <JobList jobs={DUMMY_JOBS} />
       {/* <JobDetail jobs={DUMMY_JOBS} /> */}
