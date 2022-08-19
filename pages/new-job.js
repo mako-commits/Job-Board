@@ -19,6 +19,8 @@ const NewJobPage = () => {
     if (data.status === 201) {
       alert("Job post created successfully");
       router.push("/");
+    } else {
+      alert("Something went wrong");
     }
   };
   return (

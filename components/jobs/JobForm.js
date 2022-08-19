@@ -1,6 +1,7 @@
-import { useRef } from "react";
+import { useRef, useState } from "react";
 
 const JobForm = (props) => {
+  const [formIsValid, setFormIsValid] = useState(null);
   const companyNameInput = useRef();
   const companyWebsiteInput = useRef();
   const companyEmailInput = useRef();
@@ -10,6 +11,18 @@ const JobForm = (props) => {
   const jobDescriptionInput = useRef();
   const jobResponsibilitiesInput = useRef();
 
+  const validateForm = () => {
+    return (
+      companyNameInput.current.value.length > 0 &&
+      companyWebsiteInput.current.value.length > 0 &&
+      companyEmailInput.current.value.length > 0 &&
+      jobPositionInput.current.value.length > 0 &&
+      jobLocationInput.current.value.length > 0 &&
+      jobTypeInput.current.value.length > 0 &&
+      jobDescriptionInput.current.value.length > 0 &&
+      jobResponsibilitiesInput.current.value.length > 0
+    );
+  };
   const submitHandler = (e) => {
     e.preventDefault();
 
@@ -54,12 +67,13 @@ const JobForm = (props) => {
                   Company name
                 </label>
                 <input
+                  required
                   ref={companyNameInput}
                   type="text"
                   name="first-name"
                   id="first-name"
-                  autoComplete="given-name"
-                  className="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
+                  autoComplete="company-name"
+                  className="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md valid:ring-green-500 valid:border-green-500"
                 />
               </div>
 
@@ -75,11 +89,12 @@ const JobForm = (props) => {
                     https://
                   </span>
                   <input
+                    required
                     ref={companyWebsiteInput}
                     type="text"
                     name="company-website"
                     id="company-website"
-                    className="focus:ring-indigo-500 focus:border-indigo-500 flex-1 block w-full rounded-none rounded-r-md sm:text-sm border-gray-300"
+                    className="focus:ring-indigo-500 focus:border-indigo-500 flex-1 block w-full rounded-none rounded-r-md sm:text-sm border-gray-300 valid:ring-green-500 valid:border-green-500"
                     placeholder="www.example.com"
                   />
                 </div>
@@ -93,12 +108,13 @@ const JobForm = (props) => {
                   Company Email address
                 </label>
                 <input
+                  required
                   ref={companyEmailInput}
                   type="email"
                   name="email-address"
                   id="email-address"
                   autoComplete="email"
-                  className="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
+                  className="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md valid:ring-green-500 valid:border-green-500"
                 />
               </div>
 
@@ -110,12 +126,13 @@ const JobForm = (props) => {
                   Job Position
                 </label>
                 <input
+                  required
                   ref={jobPositionInput}
                   type="text"
                   name="last-name"
                   id="last-name"
                   autoComplete="family-name"
-                  className="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
+                  className="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md valid:ring-green-500 valid:border-green-500"
                 />
               </div>
 
@@ -127,12 +144,13 @@ const JobForm = (props) => {
                   Location
                 </label>
                 <input
+                  required
                   ref={jobLocationInput}
                   type="text"
                   name="street-address"
                   id="street-address"
                   autoComplete="street-address"
-                  className="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
+                  className="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md valid:ring-green-500 valid:border-green-500"
                 />
               </div>
               <div className="col-span-6 sm:col-span-3">
@@ -146,7 +164,6 @@ const JobForm = (props) => {
                   ref={jobTypeInput}
                   id="job-type"
                   name="job-type"
-                  autoComplete="country-name"
                   className="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
                 >
                   <option>Full Time</option>
@@ -164,11 +181,12 @@ const JobForm = (props) => {
                 </label>
                 <div className="mt-1">
                   <textarea
+                    required
                     ref={jobDescriptionInput}
-                    id="about"
-                    name="about"
+                    id="job-description"
+                    name="job-description"
                     rows={3}
-                    className="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 mt-1 block w-full sm:text-sm border border-gray-300 rounded-md"
+                    className="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 mt-1 block w-full sm:text-sm border border-gray-300 rounded-md valid:ring-green-500 valid:border-green-500"
                     placeholder=""
                     defaultValue={""}
                   />
@@ -184,11 +202,12 @@ const JobForm = (props) => {
                 </label>
                 <div className="mt-1">
                   <textarea
+                    required
                     ref={jobResponsibilitiesInput}
-                    id="about"
-                    name="about"
+                    id="job-responsibilities"
+                    name="job-responsibilities"
                     rows={3}
-                    className="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 mt-1 block w-full sm:text-sm border border-gray-300 rounded-md"
+                    className="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 mt-1 block w-full sm:text-sm border border-gray-300 rounded-md valid:ring-green-500 valid:border-green-500"
                     placeholder=""
                     defaultValue={""}
                   />
