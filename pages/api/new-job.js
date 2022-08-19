@@ -1,5 +1,6 @@
 // /api/new-meet-up
 
+// Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 import { MongoClient } from "mongodb";
 
 const MONGODB_URI = process.env.MONGODB_URI;
@@ -9,7 +10,7 @@ const MONGODB_URI = process.env.MONGODB_URI;
 const handler = async (req, res) => {
   if (req.method === "POST") {
     const data = req.body;
-    // const { title, image, address, decription } = data;
+
     try {
       const client = await MongoClient.connect(MONGODB_URI);
       const db = client.db();
