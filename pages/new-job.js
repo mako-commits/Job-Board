@@ -7,14 +7,19 @@ const NewJobPage = () => {
 
   const addNewJobHandler = async (enteredJobData) => {
     console.log(enteredJobData);
-    await fetch("/api/new-job", {
+    const response = await fetch("/api/new-job", {
       method: "POST",
+      body: JSON.stringify(enteredJobData),
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify(enteredJobData),
     });
-    router.push("/");
+    const data = await response.json();
+    console.log(data);
+    if (data.status === 201) {
+      alert("Job post created successfully");
+      router.push("/");
+    }
   };
   return (
     <section className="main">

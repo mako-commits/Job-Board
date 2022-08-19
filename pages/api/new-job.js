@@ -13,11 +13,12 @@ const handler = async (req, res) => {
     try {
       const client = await MongoClient.connect(MONGODB_URI);
       const db = client.db();
-      const jobsCollection = db.collection("jobss");
+      const jobsCollection = db.collection("jobs");
       const result = await jobsCollection.insertOne(data);
       console.log(res);
       client.close();
       res.status(201).json({
+        status: 201,
         message: "Job created successfully",
       });
     } catch {

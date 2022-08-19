@@ -37,7 +37,12 @@ const JobForm = (props) => {
   };
   return (
     <div className="mt-5 md:mt-0 md:col-span-2">
-      <form action="#" method="POST" className="text-black">
+      <form
+        // action="#"
+        // method="POST"
+        className="text-black"
+        onSubmit={submitHandler}
+      >
         <div className="shadow overflow-hidden sm:rounded-md">
           <div className="px-4 py-5 bg-white sm:p-6">
             <div className="grid grid-cols-6 gap-6">
@@ -243,7 +248,6 @@ const JobForm = (props) => {
             <button
               type="submit"
               className="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
-              onClick={submitHandler}
             >
               Post Job
             </button>
