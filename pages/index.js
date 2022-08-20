@@ -2,7 +2,7 @@ import Head from "next/head";
 import Jobs from "../components/jobs/Jobs";
 import styles from "../styles/Home.module.css";
 
-export default function Home() {
+const Home = () => {
   return (
     <div className={styles.container}>
       <Head>
@@ -19,4 +19,6 @@ export default function Home() {
       </section>
     </div>
   );
-}
+};
+
+export default Home;

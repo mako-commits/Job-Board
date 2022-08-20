@@ -24,6 +24,7 @@ const JobDetails = (props) => {
         level="Mid-Level"
         type="Full time"
         company="MasterCard"
+        website="https://website.com"
         description="This sunny and spacious room is for those traveling light and looking for a comfy and cosy place to lay their head for a night or two. This beach house sits in a vibrant neighborhood littered with cafes, pubs, restaurants and supermarkets and is close to"
       />
     </main>

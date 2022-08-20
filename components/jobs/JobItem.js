@@ -3,6 +3,8 @@ import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import styles from "../../styles/JobItem.module.css";
+import avatar from "../../images/avatar.png";
+
 const JobItem = (props) => {
   const router = useRouter();
   const showJobDetail = () => {
@@ -16,7 +18,7 @@ const JobItem = (props) => {
         onClick={showJobDetail}
       >
         <Image
-          src={props.image}
+          src={props.image || avatar}
           alt=""
           width="80"
           height="88"
@@ -57,7 +59,7 @@ const JobItem = (props) => {
             <div>
               <dt className="sr-only">Salary Range</dt>
               <dd className="px-1.5 ring-1 ring-slate-200 rounded">
-                {props.salary}
+                {props.salary || "Not Specified"}
               </dd>
             </div>
             <div className="ml-2">

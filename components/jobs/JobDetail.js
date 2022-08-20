@@ -110,7 +110,10 @@ const JobDetail = (props) => {
             type="button"
             className="bg-indigo-600 text-white text-sm leading-6 font-medium py-2 px-3 rounded-lg"
           >
-            Apply on Company Site
+            <a href={props.website} target="_blank" rel="noreferrer">
+              {" "}
+              Apply on Company Site
+            </a>
           </button>
         </div>
         <div className="mt-7">
