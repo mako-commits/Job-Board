@@ -11,6 +11,7 @@ const JobForm = (props) => {
   const jobTypeInput = useRef();
   const jobDescriptionInput = useRef();
   const jobResponsibilitiesInput = useRef();
+  const jobLevelInput = useRef();
 
   const validateForm = () => {
     return (
@@ -52,6 +53,7 @@ const JobForm = (props) => {
     const enteredJobType = jobTypeInput.current.value;
     const enteredJobDescription = jobDescriptionInput.current.value;
     const enteredJobResponsibilities = jobResponsibilitiesInput.current.value;
+    const enteredJobLevel = jobLevelInput.current.value;
 
     const jobData = {
       companyName: enteredCompanyName,
@@ -62,6 +64,7 @@ const JobForm = (props) => {
       jobType: enteredJobType,
       jobDescription: enteredJobDescription,
       jobResponsibilities: enteredJobResponsibilities,
+      jobLevel: enteredJobLevel,
     };
     props.onAddJob(jobData);
     console.log(jobData);
@@ -77,9 +80,10 @@ const JobForm = (props) => {
         <div className="shadow overflow-hidden sm:rounded-md">
           <div className="px-4 py-5 bg-white sm:p-6">
             <div className="grid grid-cols-6 gap-6">
+              {/* Company Name */}
               <div className="col-span-6 sm:col-span-3">
                 <label
-                  htmlFor="first-name"
+                  htmlFor="company-name"
                   className="block text-sm font-medium text-gray-700"
                 >
                   Company name
@@ -88,13 +92,14 @@ const JobForm = (props) => {
                   required
                   ref={companyNameInput}
                   type="text"
-                  name="first-name"
-                  id="first-name"
+                  name="company-name"
+                  id="company-name"
                   autoComplete="company-name"
                   className="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md valid:ring-green-500 valid:border-green-500 "
                 />
               </div>
 
+              {/* Company Website */}
               <div className="col-span-6 sm:col-span-3">
                 <label
                   htmlFor="company-website"
@@ -138,7 +143,7 @@ const JobForm = (props) => {
 
               <div className="col-span-6 sm:col-span-3">
                 <label
-                  htmlFor="last-name"
+                  htmlFor="job-position"
                   className="block text-sm font-medium text-gray-700"
                 >
                   Job Position
@@ -147,9 +152,9 @@ const JobForm = (props) => {
                   required
                   ref={jobPositionInput}
                   type="text"
-                  name="last-name"
-                  id="last-name"
-                  autoComplete="family-name"
+                  name="job-position"
+                  id="job-position"
+                  autoComplete="job-position"
                   className="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md valid:ring-green-500 valid:border-green-500"
                 />
               </div>
@@ -171,6 +176,7 @@ const JobForm = (props) => {
                   className="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md valid:ring-green-500 valid:border-green-500"
                 />
               </div>
+
               <div className="col-span-6 sm:col-span-3">
                 <label
                   htmlFor="job-type"
@@ -186,10 +192,49 @@ const JobForm = (props) => {
                 >
                   <option>Full Time</option>
                   <option>Part Time</option>
+                  <option>Contract</option>
                   <option>Internship</option>
                 </select>
               </div>
 
+              <div className="col-span-6 sm:col-span-3">
+                <label
+                  htmlFor="job-type"
+                  className="block text-sm font-medium text-gray-700"
+                >
+                  Experience Level
+                </label>
+                <select
+                  ref={jobLevelInput}
+                  id="job-level"
+                  name="job-level"
+                  className="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                >
+                  <option>Senior</option>
+                  <option>Mid Level</option>
+                  <option>Junior</option>
+                  <option>Intern</option>
+                  <option>Entry Level</option>
+                </select>
+              </div>
+
+              <div className="col-span-6 sm:col-span-3">
+                <label
+                  htmlFor="street-address"
+                  className="block text-sm font-medium text-gray-700"
+                >
+                  Salary
+                </label>
+                <input
+                  optional
+                  ref={jobLocationInput}
+                  type="text"
+                  name="salary"
+                  id="salary"
+                  placeholder="200k - 400k"
+                  className="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md "
+                />
+              </div>
               {/* <div className="col-span-6 ">
                 <label className="block text-sm font-medium text-gray-700">
                   Company Logo
