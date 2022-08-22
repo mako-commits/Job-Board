@@ -17,13 +17,14 @@ const NewJobPage = () => {
     });
     const data = await response.json();
     console.log(data);
-    router.push("/");
+
     if (data.status === 201) {
       alert("Job post created successfully");
       router.push("/");
     } else {
       alert("Something went wrong");
     }
+    router.push("/");
   };
   return (
     <section className="main">

@@ -25,7 +25,7 @@ const JobItem = (props) => {
           className="flex-none rounded-md bg-slate-100"
         />
 
-        <div className="min-w-0 relative flex-auto">
+        <div className="min-w-0 relative flex-auto mt-5 md:mt-0">
           <div className="flex-none w-full font-normal">
             <dt className="sr-only">Company Name</dt>
             <dd className="text-slate-400">{props.company}</dd>
@@ -33,7 +33,7 @@ const JobItem = (props) => {
           <h2 className="font-semibold text-white truncate pr-20">
             {props.title}
           </h2>
-          <dl className="mt-2 flex flex-wrap gap-2 text-sm leading-6 font-medium">
+          <dl className="mt-2 flex flex-wrap gap-2 text-[0.5rem] md:text-sm leading-6 font-medium">
             <div className="absolute top-0 right-0 flex items-center space-x-1">
               <dt className="text-sky-500">
                 <span className="sr-only">Job Details</span>
@@ -56,13 +56,14 @@ const JobItem = (props) => {
               </dt>
               <dd>{props.starRating}</dd>
             </div>
+
             <div>
               <dt className="sr-only">Salary Range</dt>
-              <dd className="px-1.5 ring-1 ring-slate-200 rounded">
+              <dd className=" px-1 md:px-1.5 ring-1 ring-slate-200 rounded">
                 {props.salary || "Not Specified"}
               </dd>
             </div>
-            <div className="ml-2">
+            <div className="ml-1">
               <dt className="sr-only">Location</dt>
 
               <dd className="flex items-center ">
@@ -88,6 +89,7 @@ const JobItem = (props) => {
                 {props.location}
               </dd>
             </div>
+
             <div>
               <dt className="sr-only">Level</dt>
               <dd className="flex items-center">
@@ -95,7 +97,7 @@ const JobItem = (props) => {
                   width="2"
                   height="2"
                   fill="currentColor"
-                  className="mx-2 text-slate-300"
+                  className="mx-1 text-slate-300"
                   aria-hidden="true"
                 >
                   <circle cx="1" cy="1" r="1" />
@@ -124,7 +126,7 @@ const JobItem = (props) => {
                   width="2"
                   height="2"
                   fill="currentColor"
-                  className="mx-2 text-slate-300 "
+                  className="mx-1 text-slate-300 "
                   aria-hidden="true"
                 >
                   <circle cx="1" cy="1" r="1" />

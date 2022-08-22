@@ -10,14 +10,14 @@ const Home = (props) => {
   return (
     <div className={styles.container}>
       <Head>
-        <title>Job Board</title>
+        <title>Job Board for Developers</title>
         <meta name="description" content="Create Job Posts" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
       <section className={styles.main}>
-        <h1 className="title-font sm:text-4xl text-3xl mb-4 font-medium text-white">
-          Jobs
+        <h1 className="title-font sm:text-4xl text-3xl mb-6 font-medium text-white text-center">
+          Jobs for Developers
         </h1>
         <Jobs jobs={props.jobs} />
       </section>
@@ -48,6 +48,8 @@ export async function getStaticProps() {
             responsibilities: job.jobResponsibilities,
             type: job.jobType,
             website: job.companyWebsite,
+            salary: job.jobSalary,
+            level: job.jobLevel,
             id: job._id.toString(),
           }))
         )

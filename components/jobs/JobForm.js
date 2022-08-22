@@ -12,6 +12,7 @@ const JobForm = (props) => {
   const jobDescriptionInput = useRef();
   const jobResponsibilitiesInput = useRef();
   const jobLevelInput = useRef();
+  const jobSalaryInput = useRef();
 
   const validateForm = () => {
     return (
@@ -54,6 +55,7 @@ const JobForm = (props) => {
     const enteredJobDescription = jobDescriptionInput.current.value;
     const enteredJobResponsibilities = jobResponsibilitiesInput.current.value;
     const enteredJobLevel = jobLevelInput.current.value;
+    const enteredJobSalary = jobSalaryInput.current.value;
 
     const jobData = {
       companyName: enteredCompanyName,
@@ -65,6 +67,7 @@ const JobForm = (props) => {
       jobDescription: enteredJobDescription,
       jobResponsibilities: enteredJobResponsibilities,
       jobLevel: enteredJobLevel,
+      jobSalary: enteredJobSalary,
     };
     props.onAddJob(jobData);
     console.log(jobData);
@@ -227,7 +230,7 @@ const JobForm = (props) => {
                 </label>
                 <input
                   optional
-                  ref={jobLocationInput}
+                  ref={jobSalaryInput}
                   type="text"
                   name="salary"
                   id="salary"
