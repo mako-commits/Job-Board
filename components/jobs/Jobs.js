@@ -33,7 +33,7 @@ const DUMMY_JOBS = [
       "This sunny and spacious room is for those traveling light and looking for a comfy and cosy place to lay their head for a night or two. This beach house sits in a vibrant neighborhood littered with cafes, pubs, restaurants and supermarkets and is close to all the major attractions such as Edinburgh Castle and Arthur's Seat.",
   },
 ];
-const Jobs = () => {
+const Jobs = (props) => {
   return (
     <div className="divide-y divide-slate-100">
       {/* <Nav>
@@ -44,7 +44,7 @@ const Jobs = () => {
         <NavItem href="/picks">Vincent’s Picks</NavItem>
       </Nav> */}
 
-      <JobList jobs={DUMMY_JOBS} />
+      <JobList jobs={props.jobs} />
       {/* <JobDetail jobs={DUMMY_JOBS} /> */}
 
       {/* <JobList>
