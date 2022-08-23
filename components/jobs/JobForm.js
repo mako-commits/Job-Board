@@ -26,6 +26,8 @@ const JobForm = (props) => {
       jobResponsibilitiesInput.current.value.trim() !== ""
     );
   };
+
+  const postDate = new Date();
   const submitHandler = (e) => {
     e.preventDefault();
 
@@ -56,6 +58,7 @@ const JobForm = (props) => {
     const enteredJobResponsibilities = jobResponsibilitiesInput.current.value;
     const enteredJobLevel = jobLevelInput.current.value;
     const enteredJobSalary = jobSalaryInput.current.value;
+    const postedDate = postDate.toDateString();
 
     const jobData = {
       companyName: enteredCompanyName,
@@ -68,6 +71,7 @@ const JobForm = (props) => {
       jobResponsibilities: enteredJobResponsibilities,
       jobLevel: enteredJobLevel,
       jobSalary: enteredJobSalary,
+      postDate: postedDate,
     };
     props.onAddJob(jobData);
     console.log(jobData);
