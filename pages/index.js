@@ -59,4 +59,38 @@ export async function getStaticProps() {
     revalidate: 1,
   };
 }
+
+// export async function getStaticProps() {
+//   //the code here only runs on the server
+//   // fetch data from external API
+//   const fetchJobPosts = async () => {
+//     const response = await fetch("/api/get-job-posts", {
+//       method: "GET",
+//     });
+//   };
+//   const jobs = await response.json()
+//   client.close();
+//   return {
+//     props: {
+//       jobs: JSON.parse(
+//         JSON.stringify(
+//           jobs.map((job) => ({
+//             company: job.companyName,
+//             title: job.jobPosition,
+//             location: job.jobLocation,
+//             description: job.jobDescription,
+//             responsibilities: job.jobResponsibilities,
+//             type: job.jobType,
+//             website: job.companyWebsite,
+//             salary: job.jobSalary,
+//             level: job.jobLevel,
+//             id: job._id.toString(),
+//           }))
+//         )
+//       ),
+//     },
+//     //number of seconds nextjs will regenerate the page if it's not changed
+//     revalidate: 1,
+//   };
+// }
 export default Home;
